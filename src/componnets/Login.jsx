@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 
 function Login() {
-  const [emailId, setEmailId] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailId, setEmailId] = useState("nayana@gmail.com");
+  const [password, setPassword] = useState("Nayana@123");
   const dispatch = useDispatch();
+  const [Error, setError] =useState("")
   const navigate =useNavigate();
 
 
@@ -21,8 +22,9 @@ function Login() {
       }, {withCredentials:true});
       console.log(res.data);
       dispatch(addUser(res.data),
-      navigate("/feed"))
+      navigate("/"))
     } catch (err) {
+      setError(err?.response?.data)
       console.log(err);
     }
   };
@@ -58,6 +60,7 @@ function Login() {
             </fieldset>
           </div>
           <div className="card-actions justify-center">
+          <p className="text-red-500">{`${Error}`}</p>
             <button className="btn btn-primary" onClick= {handleLogin}
             >Login</button>
           </div>
