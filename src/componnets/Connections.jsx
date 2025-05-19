@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
- import { addConnections } from "../utils/connectionSlice"
+import { addConnections } from "../utils/connectionSlice";
 import { Link } from "react-router-dom";
 
 const Connections = () => {
@@ -29,10 +29,10 @@ const Connections = () => {
   if (connections.length === 0) return <h1> No Connections Found</h1>;
 
   return (
-    <div className="text-center my-10">
+    <div className="text-center py-10 ">
       <h1 className="text-bold text-white text-3xl">Connections</h1>
 
-      {connections.map((connection) => {
+     {  connections && connections.map((connection) => {
         const { _id, firstName, lastName, photoUrl, age, gender, about } =
           connection;
 
@@ -55,11 +55,9 @@ const Connections = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
-            <div className="">
             <Link to={"/chat/" + _id}>
               <button className="btn btn-primary">Chat</button>
             </Link>
-            </div>
           </div>
         );
       })}
