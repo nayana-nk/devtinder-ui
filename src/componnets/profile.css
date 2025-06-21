@@ -1,0 +1,8 @@
+.editProfile{
+    display:flex;
+}
+@media(max-width:520px){
+    .editProfile{
+    display:block;
+}
+}
