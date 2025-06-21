@@ -14,7 +14,7 @@ const NavBar = () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
       dispatch(removeUser());
-      return navigate("/login");
+      return navigate("/");
     } catch (err) {
       // Error logic maybe redirect to error page
       console.log(err);
@@ -56,6 +56,9 @@ const NavBar = () => {
               </li>
               <li>
                 <Link to="/connections">Connections</Link>
+              </li>
+                 <li>
+                <Link to="/feed">Feed</Link>
               </li>
 
               <li>

@@ -19,7 +19,7 @@ function App() {
     <Routes>
        <Route path="/" element={<BodyComponent/>} >
        <Route path="/" element={<Login/>} />
-       <Route path="/login" element={<Login/>} />
+       <Route path="/feed" element={<FeedPage/>} />
          <Route path="/profile" element={<Profile/>} />
           <Route path="/connections" element={<Connections/>} />
           <Route path="/requests" element={<RequestsPage/>} />
