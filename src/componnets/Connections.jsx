@@ -39,7 +39,7 @@ const Connections = () => {
         return (
           <div
             key={_id}
-            className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
+            className="flex py-2 m-md-4 m-2 p-md-4 rounded-lg bg-base-300 connections align-items-center"
           >
             <div>
               <img
@@ -55,7 +55,7 @@ const Connections = () => {
               {age && gender && <p>{age + ", " + gender}</p>}
               <p>{about}</p>
             </div>
-            <Link to={"/chat/" + _id}>
+            <Link to={"/chat/" + _id} className="m-auto">
               <button className="btn btn-primary">Chat</button>
             </Link>
           </div>
