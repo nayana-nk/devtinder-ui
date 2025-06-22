@@ -2,3 +2,10 @@
 @plugin "daisyui" {
   themes: light --default;
 }
+@media(min-width: 521px){
+    .connections{
+        width:50%;
+        justify-content: center;
+        margin: auto !important;
+    }
+}
