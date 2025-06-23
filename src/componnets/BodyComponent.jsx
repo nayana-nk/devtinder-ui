@@ -8,7 +8,7 @@ function BodyComponent() {
    <>
    <NavBar/>
    <Outlet/>
-   <Footer/>
+  
    </>
   )
 }

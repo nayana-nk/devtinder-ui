@@ -5,6 +5,7 @@ import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import "./profile.css";
+import { useNavigate } from "react-router-dom";
 
 const IMGBB_API_KEY = "0ee641718617b2bd483116d88a3f77a5";
 
@@ -19,6 +20,8 @@ const EditProfile = ({ user }) => {
   const [showToast, setShowToast] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   const photoUploadHandler = async (e) => {
     const file = e.target.files[0];
@@ -75,7 +78,12 @@ const EditProfile = ({ user }) => {
       );
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3000);
+       
+     setTimeout(() => {
+  setShowToast(false);
+  navigate("/feed");
+}, 3000);
+       
     } catch (err) {
       setError(err?.response?.data || "Profile update failed.");
     }
@@ -188,8 +196,11 @@ const EditProfile = ({ user }) => {
         <div className="toast toast-top toast-center">
           <div className="alert alert-success">
             <span>Profile saved successfully.</span>
+          
           </div>
+         
         </div>
+        
       )}
     </>
   );
