@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-blue-300 ">
       <div className="flex-1">
-        <Link to="/" className="text-xl text-neutral">
+        <Link to="/feed" className="text-xl text-neutral">
           
           
            DevTinder
